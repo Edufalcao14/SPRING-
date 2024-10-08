@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: Products Service
+  description: Management of products Service
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:9001'
+components:
+  schemas:
+    products:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Product's identification
+        name:
+          type: string
+          description: Product's name
+        category:
+          type: string
+          description: Product's description
+        price:
+          type: number
+          description: Product's price
+      example:
+        id: 1
+        name: Keyboard Microsoft
+        category: IT
+        price: 19,99
+paths:
+  /products/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: product's id
+        required: true
+        schema:
+          type: integer
+          example: 12345
+    get:
+      summary: get one product by it's id
+      responses:
+        404:
+          description: product found with this id
+        200:
+          description: Returns the product's information
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/products'
+
+    put:
+      summary: update product with id passed in parameter
+      responses:
+        400:
+          description: The id in parameter does not match the id in the user data, or the data does not match what would be expected
+        404:
+          description: Product not found
+        200:
+          description: the product's information has been updated
+      requestBody:
+        description: new product's information
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/products'
+    delete:
+      summary: Delete an product with the id passed in parameter
+      responses:
+        400:
+          description: The id in parameter does not match the id in the user data, or the data does not match what would be expected
+        404:
+          description: Product not found
+        200:
+          description: Product deleted
+  /products:
+    get:
+      summary: get all the products
+      responses:
+        200:
+          description: Returns the product's information
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/products'
+    put:
+      summary: Create a new product
+      responses:
+        400:
+          description: the information passed isn't correct
+        200:
+          description: product created

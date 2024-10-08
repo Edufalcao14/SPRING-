@@ -1,0 +1,12 @@
+### Create a User
+POST http://localhost:9002/users/Haisen
+Content-Type: application/json
+
+{
+  "pseudo": "edu",
+  "firstname": "test",
+  "lastname": "test"
+}
+### Get a User
+GET http://localhost:9002/users/Haisen
+Content-Type: application/json

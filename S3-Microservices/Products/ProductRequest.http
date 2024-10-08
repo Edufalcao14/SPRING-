@@ -1,0 +1,27 @@
+### Get a Product by ID
+GET http://localhost:9001/product/1
+Content-Type: application/json
+
+### Create a Product
+POST http://localhost:9001/product
+Content-Type: application/json
+
+{
+  "name": "keyboard",
+  "category": "IT",
+  "price": 19.99
+}
+
+### Update a Product
+PUT http://localhost:9001/product/{id}
+Content-Type: application/json
+
+{
+  "name": "Updated Product",
+  "description": "Updated description",
+  "price": 24.99
+}
+
+### Delete a Product
+DELETE http://localhost:9001/products/{id}
+Content-Type: application/json

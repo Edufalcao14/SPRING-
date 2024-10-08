@@ -1,0 +1,25 @@
+### Read all
+GET http://localhost:8080/product
+
+### Create One
+POST http://localhost:8080/product
+Content-Type: application/json
+
+{
+  "name":"Office Computer",
+  "category": "Electronics",
+  "price": 50.0
+}
+### Delete One
+DELETE http://localhost:8080/product/1
+
+
+### Create One
+PUT http://localhost:8080/product/1
+Content-Type: application/json
+
+{
+  "name":"Tom Iafshak",
+  "category": "Gay",
+  "price": 1.0
+}

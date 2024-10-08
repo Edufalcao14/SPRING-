@@ -1,0 +1,28 @@
+### Create One Cart
+POST http://localhost:9003/carts/users/Haisen/products/1
+Content-Type: application/json
+
+{
+  "pseudo": "Haisen",
+  "productId": 1
+}
+
+### Delete Product from Cart
+DELETE http://localhost:9003/carts/users/Haisen/products/1
+
+Content-Type: application/json
+
+### Delete User's Cart
+DELETE http://localhost:9003/carts/users/Haisen
+
+Content-Type: application/json
+
+### Get User's Cart
+GET http://localhost:9003/carts/users/Haisen
+
+Content-Type: application/json
+
+### Delete Product from All Carts
+DELETE http://localhost:9003/products/1
+
+Content-Type: application/json
